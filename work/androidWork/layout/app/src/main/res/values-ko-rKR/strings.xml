@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">레이아웃</string>
+    <string name="menu1">로그인</string>
+    <string name="menu2">회원가입</string>
+    <string name="getdata">입력문자출력</string>
+    <string name="test">테스트</string>
+    <string name="menu3">상세정보</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FrameLayoutTest">
+
+    <Button
+        android:id="@+id/btnchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이미지선택"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        />
+<!-- FrameLayout은 하나 이상의 뷰를 보여줄 수 있는 레이아웃
+    visibility속성을 이용해서 특정 뷰를 보이거나 보이지않도록 처리
+    visible : 화면에 보이도록
+    invisible: 화면에 보이지 않도록-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img01"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kim"
+            />
+        <ImageView
+            android:id="@+id/img02"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/lee"
+            />
+
+    </FrameLayout>
+</LinearLayout>

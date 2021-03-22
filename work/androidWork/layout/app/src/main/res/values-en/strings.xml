@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">layout</string>
+    <string name="menu1">login</string>
+    <string name="menu2">register</string>
+    <string name="menu3">info</string>
+    <string name="getdata">print</string>
+    <string name="test">test</string>
+</resources>

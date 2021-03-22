@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CheckBoxTest">
+
+    <TextView
+        android:id="@+id/checkInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="info:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:lines="5"/>
+<!--CheckBox의 기본 속성
+    checked : 체크 상태를 설정
+    -->
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Switch" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:tag="1"
+        android:text="코틀린" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="2"
+        android:text="라즈베리파이" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:tag="3"
+        android:text="안드로이드" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="4"
+        android:text="MQTT" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="5"
+        android:text="MongoDB" />
+
+    <Button
+        android:id="@+id/check_button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="체크상태설정" />
+
+    <Button
+        android:id="@+id/check_button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="체크상태확인" />
+
+    <Button
+        android:id="@+id/check_button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="체크상태해제" />
+
+    <Button
+        android:id="@+id/check_button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="체크상태변경" />
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/rect01"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="#dd4e4e" />
+
+    <TextView
+        android:id="@+id/rect02"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/rect01"
+        android:layout_centerVertical="true"
+        android:background="#673AB7" />
+
+    <TextView
+        android:id="@+id/rect022"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/rect01"
+        android:layout_above="@id/rect01"
+        android:background="#E91E63" />
+
+    <TextView
+        android:id="@+id/rect03"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#4CAF50"
+        android:layout_above="@id/rect01"/>
+
+    <TextView
+        android:id="@+id/rect04"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/rect01"
+        android:background="#00BCD4" />
+
+    <TextView
+        android:id="@+id/rect05"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#CDDC39"
+        android:layout_toLeftOf="@id/rect01"/>
+
+
+</RelativeLayout>

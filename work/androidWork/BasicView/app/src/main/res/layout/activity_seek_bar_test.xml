@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".seekBarTest">
+
+    <TextView
+        android:id="@+id/txtseekinfo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="seek1_info:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtseekinfo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="seek2_info:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:progress="5" />
+
+    <Button
+        android:id="@+id/seekbtnup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="증가" />
+
+    <Button
+        android:id="@+id/seekbtndown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="감소" />
+
+    <Button
+        android:id="@+id/seekbtnset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="값설정" />
+
+    <Button
+        android:id="@+id/seekbtngetValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="현재값가져오기" />
+
+</LinearLayout>

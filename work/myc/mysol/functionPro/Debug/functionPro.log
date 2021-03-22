@@ -1,0 +1,4 @@
+﻿  miniPro.c
+C:\IOT\myc\mysol\functionPro\miniPro.c(18,10): warning C4477: 'scanf_s' : 서식 문자열 '%c'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
+C:\IOT\myc\mysol\functionPro\miniPro.c(18,10): message : 이 인수는 변환 지정자에서 사용됩니다.
+  functionPro.vcxproj -> C:\IOT\myc\mysol\Debug\functionPro.exe

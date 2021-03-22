@@ -1,0 +1,5 @@
+﻿  firstPro3.c
+C:\IOT\firstSol\thirdPro\firstPro3.c(10,6): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
+C:\IOT\firstSol\thirdPro\firstPro3.c(11,6): warning C4101: 'b' :참조되지 않은 지역 변수입니다.
+C:\IOT\firstSol\thirdPro\firstPro3.c(12,6): warning C4101: 'c' :참조되지 않은 지역 변수입니다.
+  thirdPro.vcxproj -> C:\IOT\firstSol\Debug\thirdPro.exe
