@@ -10,51 +10,144 @@ class Calculator : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
-        var history:String = ""
-        var num1:String = ""
-        var num2:String = ""
-        resultCalc2.setText("0")
-        resultCalc.setText("")
-        var double1:Double
-        var double2:Double
-        //초기화부분
-        CE.setOnClickListener {
-            resultCalc.setText("")
-            resultCalc2.setText("0")
-            double1 = 0.0
-            double2 = 0.0
-            history = ""
-            num1 = ""
-            num2 = ""
-        }
-        C.setOnClickListener {
-            resultCalc.setText("")
-            resultCalc2.setText("0")
-            double1 = 0.0
-            double2 = 0.0
-            history = ""
-            num1 = ""
-            num2 = ""
-        }
-        //부호 바꾸는 부분
-//        plusAndMinus.setOnClickListener {
-//            if((Double.parse))
-//        }
-        var btnArr = arrayOf(plus,minus,multiplation,division,value,DEL)
-        for(i in btnArr){
-            i.setOnClickListener{}
-        }
+        var a: String = ""
+        var list = mutableListOf<String>()
+        var b: Long = 0L
+        var c: Long = 1L
+        var d: Double = 1.0
+
+
+        //번호 입력 부분
         for (i in 0..9) {
             var checkString: String = "number" + "$i"
             var chBoxId = resources.getIdentifier(checkString, "id", packageName)
             findViewById<Button>(chBoxId).setOnClickListener {
-                if (resultCalc2.text.indexOf("0") == 0) {
-                    resultCalc2.setText("$i")
-                } else {
-                    resultCalc2.append("$i")
-                }
+                resultCalc.setText(resultCalc.getText().append("$i"))
+                a = resultCalc.getText().toString()
             }
         }
+
+        //연산자 입력 부분
+
+        var btnArr = arrayOf(plus, minus, multiplation, division)
+        for (i in btnArr) {
+            i.setOnClickListener {
+                resultCalc.setText(resultCalc.getText().append("${i.text}"))
+                a = resultCalc.getText().toString()
+            }
+        }
+
+        value.setOnClickListener {
+            b = 0
+            c = 1
+            d = 1.0
+            if (list.size != 0) {
+                list = mutableListOf<String>()
+            }
+
+            if (resultCalc.getText().contains("+")) {
+                val str = resultCalc.getText().split("+")
+                val a = str[0].toDouble()
+                val z = a.toInt()
+                for (i in 0..str.size - 1) {
+                    if (i == 0) {
+                        list.add(z.toString())
+                        b += list.get(i).toInt()
+                    } else {
+                        list.add(str[i])
+                        b += list.get(i).toInt()
+                    }
+
+                }
+
+                resultCalc.setText(String.format("%d", b))
+            }
+
+            if (resultCalc.getText().contains("-")) {
+                val str = resultCalc.getText().split("-")
+                val a = str[0].toDouble()
+                val z = a.toLong()
+                b = z
+                for (i in 0..str.size - 1) {
+                    list.add(str[i])
+                    if (i != 0) {
+                        b -= list.get(i).toInt()
+
+                    }
+                }
+
+                resultCalc.setText(String.format("%d", b))
+            }
+
+            if (resultCalc.getText().contains("*")) {
+                val str = resultCalc.getText().split("*")
+                val a = str[0].toDouble()
+                val z = a.toInt()
+
+                for (i in 0..str.size - 1) {
+                    if (i == 0) {
+                        list.add(z.toString())
+                        c *= list.get(i).toInt()
+                    } else {
+                        list.add(str[i])
+                        c *= list.get(i).toInt()
+                    }
+
+                }
+                resultCalc.setText(String.format("%d", c))
+            }
+
+            if (resultCalc.getText().contains("/")) {
+                val str = resultCalc.getText().split("/")
+                d = str[0].toDouble()
+                for (i in 0..str.size - 1) {
+                    list.add(str[i])
+                    if (i != 0) {
+                        d /= list.get(i).toDouble()
+
+                    }
+                }
+
+                resultCalc.setText(String.format("%.3f", d))
+            }
+            C.setOnClickListener {
+                resultCalc.setText("")
+            }
+        }
+    }
+}
+//
+//        //부호 바꾸는 부분
+//
+//        for(i in btnArr){
+//            i.setOnClickListener {
+//                if (opr.toString() == "") {
+//                    resultCalc.text = ""
+//                    num1 = resultCalc2.text.toString()
+//                    opr = i.text.toString()
+//                    resultCalc.setText("${resultCalc2.text.toString() + "${i.text}"}")
+//                } else {
+//                    resultCalc.text = ""
+//                    num2 = resultCalc2.text.toString()
+//                    var result = 0.0
+//                    when (opr) {
+//                        "＋" -> result = num1.toDouble() + num2.toDouble()
+//                        "－" -> result = num1.toDouble() - num2.toDouble()
+//                        "×" -> result = num1.toDouble() * num2.toDouble()
+//                        "÷" -> result = num1.toDouble() / num2.toDouble()
+//                        else -> result = num1.toDouble()
+//                    }
+//                    resultCalc.setText("${result.toString()}+${i.text}")
+//                }
+//            }
+//        }
+//    }
+//}
+
+//        var btnArr = arrayOf(plus,minus,multiplation,division,value,DEL)
+//        for(i in btnArr){
+//            i.setOnClickListener{}
+//        }
 
 //        var reg = Regex("[0-9]*")
 //        for (i in 0..9) {
@@ -68,12 +161,6 @@ class Calculator : AppCompatActivity() {
 //                }
 //            }
 //        }
-//        CE.setOnClickListener {
-//            resultCalc2.setText("0")
-//        }
-//        C.setOnClickListener {
-//            resultCalc.setText("")
-//            resultCalc2.setText("0")
 //        }
 //        for(i in btnArr){
 //            var onGoingText: String = resultCalc2.text.toString()
@@ -110,9 +197,6 @@ class Calculator : AppCompatActivity() {
 //            }
 //            }
 //            }
-        }
-    }
-
 
 
 

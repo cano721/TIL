@@ -11,13 +11,13 @@
         android:theme="@style/Theme.BasicView">
         <activity android:name=".CheckBoxTest"></activity>
         <activity android:name=".ToggleSwitchTest" />
-        <activity android:name=".Calculator" />
+        <activity android:name=".RadioButtonTestActivity" />
         <activity android:name=".seekBarTest" />
         <activity android:name=".ProgressBarTest" />
         <activity android:name=".ImageTestActivity" />
         <activity android:name=".TextTestActivity2" />
         <activity android:name=".TextTestActivity" />
-        <activity android:name=".RadioButtonTestActivity">
+        <activity android:name=".Calculator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

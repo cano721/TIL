@@ -19,16 +19,8 @@
         android:gravity="center"
         android:layout_weight="1"/>
 
-    <TextView
+    <EditText
         android:id="@+id/resultCalc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:gravity="right"
-        android:textSize="12sp"
-        android:layout_weight="2"/>
-    <TextView
-        android:id="@+id/resultCalc2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
@@ -41,44 +33,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="5">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/CE"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="CE"
-                android:textSize="20sp"/>
-
-            <Button
-                android:id="@+id/C"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="C"
-                android:textSize="20sp"/>
-
-            <Button
-                android:id="@+id/DEL"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="del"
-                android:textSize="20sp"/>
-
-            <Button
-                android:id="@+id/division"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="÷"
-                android:textSize="20sp"/>
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -115,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="×"
+                android:text="*"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -155,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="－"
+                android:text="-"
                 android:textSize="20sp"/>
         </LinearLayout>
 
@@ -194,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="＋"
+                android:text="+"
                 android:textSize="20sp"/>
         </LinearLayout>
 
@@ -205,11 +159,11 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/plusAndMinus"
+                android:id="@+id/C"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="+/-"
+                android:text="C"
                 android:textSize="20sp"/>
 
             <Button
@@ -221,11 +175,11 @@
                 android:textSize="20sp"/>
 
             <Button
-                android:id="@+id/decimal"
+                android:id="@+id/division"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="."
+                android:text="/"
                 android:textSize="20sp"/>
 
             <Button
@@ -233,7 +187,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="＝"
+                android:text="="
                 android:textSize="20sp"/>
         </LinearLayout>
     </LinearLayout>
