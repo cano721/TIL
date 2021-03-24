@@ -2,7 +2,9 @@ package com.example.adapterview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
+import kotlinx.android.synthetic.main.custrow.*
 import kotlinx.android.synthetic.main.list_view_test.*
 
 class CustomRowTestActivity : AppCompatActivity() {
@@ -23,5 +25,9 @@ class CustomRowTestActivity : AppCompatActivity() {
         //                                       ----------------  -------------
         //                              row의 디자인- 사용자정의 뷰  사용자정의 뷰에 포함된 textview
         listview1.adapter = myadapter
+
+//        btncust.setOnClickListener {
+//            Log.d("test","반응있나요?")
+//        }
     }
 }

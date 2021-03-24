@@ -9,11 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdapterView">
-        <activity android:name=".CustomRowTestActivity"></activity>
+        <activity android:name=".CustomAdapterTest"></activity>
+        <activity android:name=".CustomRowTestActivity" />
+        <activity android:name=".AddViewTestAcitivity" />
+        <activity android:name=".SpinnerTestActivity" />
+        <activity android:name=".CustomRowTestActivity2" />
+        <activity android:name=".InflatorTestActivity" />
         <activity android:name=".SimpleAdapterTestActivity" />
         <activity android:name=".ResourceDataListActivity" />
         <activity android:name=".ListViewTestActivity" />
-        <activity android:name=".CustomRowTestActivity2">
+        <activity android:name=".SelectView_ExamActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

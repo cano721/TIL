@@ -34,5 +34,10 @@
 			android:text="text2"
 			android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 	</LinearLayout>
+	<EditText
+		android:id="@+id/btncust"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		/>
 
 </LinearLayout>
