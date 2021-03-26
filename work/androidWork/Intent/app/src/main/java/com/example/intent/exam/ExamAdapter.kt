@@ -16,7 +16,7 @@ class ExamAdapter(context: Context,var resId:Int,var datalist:ArrayList<Person>)
         //뷰 만들기(재사용 가능)
         var row_view = convertView
         var holder: ViewHolder? = null
-       // Log.d("getView","${datalist.toString()}:${datalist.size}")
+        Log.d("getView","${datalist.toString()}:${datalist.size}")
         if (row_view == null){
             val inflator =
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater

@@ -9,16 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdapterView">
-        <activity android:name=".CustomAdapterTest"></activity>
-        <activity android:name=".CustomRowTestActivity" />
-        <activity android:name=".AddViewTestAcitivity" />
-        <activity android:name=".SpinnerTestActivity" />
-        <activity android:name=".CustomRowTestActivity2" />
-        <activity android:name=".InflatorTestActivity" />
-        <activity android:name=".SimpleAdapterTestActivity" />
-        <activity android:name=".ResourceDataListActivity" />
-        <activity android:name=".ListViewTestActivity" />
+        <activity android:name=".CustomAdapterTest" /> <!-- SelectView_ExamActivity의 이름을 정의,action을 정의        < -->
         <activity android:name=".SelectView_ExamActivity">
+            <intent-filter>
+                <action android:name="com.exam.adapterview" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddViewTestAcitivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
