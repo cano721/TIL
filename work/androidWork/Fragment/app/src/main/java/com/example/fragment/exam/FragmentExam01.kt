@@ -37,7 +37,8 @@ class FragmentExam01 : AppCompatActivity() {
             }
             "2" -> {
                 transaction.replace(R.id.view_container,viewFragment3)
-                transaction.addToBackStack("2")            }
+                transaction.addToBackStack("2")
+            }
         }
         //4. 병경한 작업을 실행해달라고 의뢰
         //commit은 스케쥴을 고려해서 적절한 시기에 변경해달라고 요청

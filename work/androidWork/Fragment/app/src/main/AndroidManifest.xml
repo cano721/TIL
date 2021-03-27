@@ -10,9 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fragment">
         <activity android:name=".exam.FragmentExam01"></activity>
+        <activity android:name=".LifeCycleActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LifeCycleActivity">
-            <intent-filter>
+        <activity android:name=".exam2.FragmentExam02">
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
