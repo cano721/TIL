@@ -1,4 +1,4 @@
-package com.example.fragment
+package com.example.fragment.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.fragment.R
 
 class SecondFragment :Fragment() {
     //fragment가 뷰를 만들때 호출되는 메소드

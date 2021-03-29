@@ -1,7 +1,8 @@
-package com.example.fragment
+package com.example.fragment.fragment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.fragment.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

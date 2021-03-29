@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/listfrag_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!-- listFragment 내부에서 사용하는 뷰의 listView는 id가 @android:id/list로 정의되어야 한다. -->
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
