@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/fileTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:lines="3"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+
+    <Button
+        android:id="@+id/internal_fileSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveInternalFile"
+        android:text="저장하기(DataOuputStream)" />
+
+    <Button
+        android:id="@+id/internal_fileopen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openInternalFile"
+        android:text="열기(DataInputStream)" />
+    <Button
+        android:id="@+id/internal_fileSave2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveInternalFile"
+        android:text="저장하기(EditText에 입력한 값)" />
+
+    <Button
+        android:id="@+id/internal_fileopen2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openInternalFile"
+        android:text="열기(EditText에 입력한 값)" />
+
+    <EditText
+        android:id="@+id/file_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+
+</LinearLayout>
