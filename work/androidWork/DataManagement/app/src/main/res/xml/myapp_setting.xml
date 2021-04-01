@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="사용자데이터입력">
+
+        <EditTextPreference
+            android:defaultValue="false"
+            android:dependency="chkwifi"
+            android:dialogIcon="@android:drawable/ic_media_play"
+            android:icon="@android:drawable/ic_menu_add"
+            android:key="data1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="여기에는 설정에 필요한 값을 입력합니다."
+            android:title="값을 입력하세요" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="chkwifi"
+            android:summary="검색된 무선네트워크를 선택하세요"
+            android:summaryOff="검색된 무선네트워크를 선택하세요."
+            android:summaryOn="무선네트워크가 설정되었습니다."
+            android:title="무선네트워크사용" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="사용자정보설정">
+
+    </PreferenceCategory>
+</PreferenceScreen>

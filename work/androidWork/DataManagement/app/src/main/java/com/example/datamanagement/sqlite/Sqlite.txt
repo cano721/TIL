@@ -1,0 +1,18 @@
+SQLite사용방법
+    - SQLiteOpenHelper를 상속받은 클래스를 만들어야 한다.
+    - SQLiteOpenHelper를 통해 SQLiteDatabase객체를 생성한다.
+
+
+1. SQLiteOpenHelper
+    - 데이터베이스 파일생성, 테이블생성
+    - 데이터베이스 이름설정
+    - 버전관리
+    1) onCreate
+        -> 앱이 설치되고 SQLiteOpenHelper가 최초로 호출될때 한 번만 실행
+        -> 최신버전의 테이블생성하는 코드
+        -> onCreate를 호출하면 앱의 내부저장소에 db파일이 생성된다.
+        -> 앱을 삭제하면 db파일도 같이 삭제되므로 삭제하고 실행하면 onCreate가 호출된다.
+
+2. SQLiteDatabase
+    - 로컬디비연동을 위한 핵심클래스
+    - DB처리를 위한 기능이 모두 있다.
