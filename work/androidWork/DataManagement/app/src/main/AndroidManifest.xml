@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DataManagement">
-        <activity android:name=".preference.PreferenceScreenTest"></activity>
+        <activity android:name=".sqlite.DBTestMainActivity"></activity>
+        <activity android:name=".preference.PreferenceScreenTest" />
         <activity android:name=".preference.PreferenceTestActivity" />
         <activity android:name=".filesystem.InternalFileMgr" />
         <activity android:name=".filesystem.MainActivity" />
-        <activity android:name=".sqlite.DBTestMainActivitiy">
+        <activity android:name=".sqlite.ContentValuesTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
