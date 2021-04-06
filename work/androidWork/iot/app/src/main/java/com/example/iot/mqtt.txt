@@ -1,0 +1,10 @@
+android에서 MQTT통신을 위해 사용하는 핵심클래스
+
+1.mqttClient
+    - android에서 NQTT통신을 하기 위한 클라이언트객체
+2.MqttConnectOptions
+    - 클라이언트가 서버에 연결하는 방법을 설정할 수 있는 객체
+
+3.IMqttActionListener
+    - 리스너
+    - broker에 연결되거나 실패할때 자동으로 실행되는 객체
