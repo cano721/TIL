@@ -1,13 +1,14 @@
-package com.example.iot
+package com.example.iot.mqtt
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.iot.R
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    lateinit var  mqttClient:MyMqtt
+    lateinit var  mqttClient: MyMqtt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
     override fun onClick(v: View?) {
         var data:String = ""
-        if(v?.id==R.id.btn_led_on){
+        if(v?.id== R.id.btn_led_on){
             data = "led_on"
         }else{
             data = "led_off"

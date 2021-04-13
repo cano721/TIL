@@ -1,7 +1,6 @@
-package com.example.iot
+package com.example.iot.mqtt
 
 import android.content.Context
-import android.service.voice.AlwaysOnHotwordDetector
 import android.util.Log
 import org.eclipse.paho.android.service.MqttAndroidClient
 import org.eclipse.paho.client.mqttv3.*
