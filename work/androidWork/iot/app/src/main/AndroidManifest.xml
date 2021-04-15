@@ -14,13 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Iot"
         android:usesCleartextTraffic="true">
-        <activity android:name=".sensor.DetectionActivity">
+        <activity android:name=".notification.SubActivity"></activity>
+        <activity android:name=".sensor.DetectionActivity" />
+        <activity android:name=".notification.NoticifactionTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
         <activity android:name=".mqtt.MainActivity">
