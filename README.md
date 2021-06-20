@@ -26,5 +26,5 @@
 
 ## [kotlin](./work/realKotlinWork)
 
-* 
+* 2021-06-20 thread 공부
 
