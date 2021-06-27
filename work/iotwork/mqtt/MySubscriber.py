@@ -32,7 +32,7 @@ mqttClient.on_connect = on_connect
 mqttClient.on_message = on_message
 
 # 브로커에 연결하기
-mqttClient.connect("15.164.46.54", 1883, 60)
+mqttClient.connect("13.124.134.89", 1883, 60)
 
 # 토픽이 전달될때까지 수신대기
 mqttClient.loop_forever()
