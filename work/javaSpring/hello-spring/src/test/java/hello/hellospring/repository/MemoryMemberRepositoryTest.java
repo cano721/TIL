@@ -1,7 +1,6 @@
-package repository;
+package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
-import hello.hellospring.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -47,7 +46,7 @@ public class MemoryMemberRepositoryTest {
 
         assertThat(result).isEqualTo(member1);
     }
-    
+
     @Test
     public void findAll() {
         Member member1 = new Member();
