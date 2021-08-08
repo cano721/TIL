@@ -17,23 +17,12 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
+            Member member = new Member();
+            member.setId(3l);
+            member.setUsername("C");
+            member.setRoleType(RoleType.GUEST);
 
-//            Member member = new Member(200L,"member200");
-//            em.persist(member);
-//            // flush를 해버리면 쓰기지연 sql 저장소에 있는 쿼리를 db에 보냄
-//            em.flush();
-//            System.out.println("========== = ");
-
-            Member member = em.find(Member.class, 101L);
-            member.setName("AAAAA");
-//            특정 객체만 준영속처리
-            em.detach(member);
-//            영속성 컨텍스트 초기화
-            em.clear();
-//            영속성 컨텍스트 종료
-            em.close();
-            System.out.println(" ============== ");
-
+            em.persist(member);
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
