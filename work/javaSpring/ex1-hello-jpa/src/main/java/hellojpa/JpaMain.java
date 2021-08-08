@@ -17,25 +17,36 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-//            select문
-//            Member findMember = em.find(Member.class, 1L);
-//            insert문
+            //비영속상태
+//            Member member = new Member();
+//            member.setId(101L);
+//            System.out.println("====before ====");
+//            member.setName("HelloJPA");
+//            //영속상태
 //            em.persist(member);
-//            Update문
-//            findMember.setName("HelloJPA");
-//            Delete문;
-//            em.remove(findMember);
-            
-//            JPQL
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(5)
-                    .setMaxResults(8)
-                    .getResultList();
-            
-            for (Member member : result){
-                System.out.println("member.getName() = " + member.getName());
-            }
-            
+//            System.out.println("====after ====");
+//            //준영속
+//            em.detach(member);
+//
+//            //삭제
+//            em.remove(member);
+
+
+            //1차 캐시 체크
+//            Member findMember1 = em.find(Member.class, 101L);
+//            Member findMember2 = em.find(Member.class, 101L);
+
+
+//            Member member1 = new Member(150L,"A");
+//            Member member2 = new Member(160L,"B");
+//
+//            em.persist(member1);
+//            em.persist(member2);
+
+            Member member = em.find(Member.class, 101L);
+            member.setName("ZZZZZ");
+
+            //이때 db에 쿼리문이 날라감
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
