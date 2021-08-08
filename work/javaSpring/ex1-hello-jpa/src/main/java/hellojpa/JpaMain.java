@@ -17,36 +17,23 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            //비영속상태
-//            Member member = new Member();
-//            member.setId(101L);
-//            System.out.println("====before ====");
-//            member.setName("HelloJPA");
-//            //영속상태
+
+//            Member member = new Member(200L,"member200");
 //            em.persist(member);
-//            System.out.println("====after ====");
-//            //준영속
-//            em.detach(member);
-//
-//            //삭제
-//            em.remove(member);
-
-
-            //1차 캐시 체크
-//            Member findMember1 = em.find(Member.class, 101L);
-//            Member findMember2 = em.find(Member.class, 101L);
-
-
-//            Member member1 = new Member(150L,"A");
-//            Member member2 = new Member(160L,"B");
-//
-//            em.persist(member1);
-//            em.persist(member2);
+//            // flush를 해버리면 쓰기지연 sql 저장소에 있는 쿼리를 db에 보냄
+//            em.flush();
+//            System.out.println("========== = ");
 
             Member member = em.find(Member.class, 101L);
-            member.setName("ZZZZZ");
+            member.setName("AAAAA");
+//            특정 객체만 준영속처리
+            em.detach(member);
+//            영속성 컨텍스트 초기화
+            em.clear();
+//            영속성 컨텍스트 종료
+            em.close();
+            System.out.println(" ============== ");
 
-            //이때 db에 쿼리문이 날라감
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
