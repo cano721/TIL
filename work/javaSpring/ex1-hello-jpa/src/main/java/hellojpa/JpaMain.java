@@ -17,20 +17,23 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-//            Member member = new Member();
-//            member.setUsername("A");
-//            Member member2 = new Member();
-//            member.setUsername("B");
-//            Member member3 = new Member();
-//            member.setUsername("C");
-//
-//
-////            시퀀스
-//            em.persist(member); // 1,51 미리 호출
-//            em.persist(member2); // 메모리에서 가져옴
-//            em.persist(member3); // 메모리에서 가져옴
-//            System.out.println("member.getId() = " + member.getId());
+            //저장
+            Team team = new Team();
+            team.setName("teamA");
+            em.persist(team);
 
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setTeam(team);
+            em.persist(member);
+
+            Member findMember = em.find(Member.class, member.getId());
+            Team findTeam = findMember.getTeam();
+            System.out.println("findTeam.getName() = " + findTeam.getName());
+
+            //
+            Team newTeam = em.find(Team.class, 100L);
+            findMember.setTeam(newTeam);
 
             tx.commit();
         } catch (Exception e) {
