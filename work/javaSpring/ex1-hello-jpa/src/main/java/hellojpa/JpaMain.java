@@ -20,20 +20,27 @@ public class JpaMain {
             //저장
             Team team = new Team();
             team.setName("teamA");
+//            team.getMembers().add(member);
             em.persist(team);
 
             Member member = new Member();
             member.setUsername("member1");
-            member.setTeam(team);
+//            member.changeTeam(team);
             em.persist(member);
+            team.addMember(member);
+//            team.getMembers().add(member);
 
-            Member findMember = em.find(Member.class, member.getId());
-            Team findTeam = findMember.getTeam();
-            System.out.println("findTeam.getName() = " + findTeam.getName());
+//            em.flush();
+//            em.clear();
 
-            //
-            Team newTeam = em.find(Team.class, 100L);
-            findMember.setTeam(newTeam);
+            Team findTeam = em.find(Team.class, team.getId()); // 1차 캐시
+            List<Member> members = findTeam.getMembers();
+
+            System.out.println(" ===============");
+            for (Member m : members){
+                System.out.println("m.getUsername() = " + m.getUsername());
+            }
+            System.out.println(" ===============");
 
             tx.commit();
         } catch (Exception e) {
