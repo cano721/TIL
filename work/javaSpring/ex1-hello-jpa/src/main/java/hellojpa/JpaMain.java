@@ -17,12 +17,21 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            Member member = new Member();
-            member.setId(3l);
-            member.setUsername("C");
-            member.setRoleType(RoleType.GUEST);
+//            Member member = new Member();
+//            member.setUsername("A");
+//            Member member2 = new Member();
+//            member.setUsername("B");
+//            Member member3 = new Member();
+//            member.setUsername("C");
+//
+//
+////            시퀀스
+//            em.persist(member); // 1,51 미리 호출
+//            em.persist(member2); // 메모리에서 가져옴
+//            em.persist(member3); // 메모리에서 가져옴
+//            System.out.println("member.getId() = " + member.getId());
 
-            em.persist(member);
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
