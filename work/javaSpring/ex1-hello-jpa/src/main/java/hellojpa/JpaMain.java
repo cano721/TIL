@@ -17,30 +17,19 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            //저장
-//            Team team = new Team();
-//            team.setName("teamA");
-//            team.getMembers().add(member);
-//            em.persist(team);
-//
-//            Member member = new Member();
-//            member.setUsername("member1");
-//            member.changeTeam(team);
-//            em.persist(member);
-//            team.addMember(member);
-//            team.getMembers().add(member);
+            Movie movie = new Movie();
+            movie.setDirector("aaaa");
+            movie.setActor("bbb");
+            movie.setName("바람과함께사라지다");
+            movie.setPrice(10000);
 
-//            em.flush();
-//            em.clear();
+            em.persist(movie);
 
-//            Team findTeam = em.find(Team.class, team.getId()); // 1차 캐시
-//            List<Member> members = findTeam.getMembers();
-//
-//            System.out.println(" ===============");
-//            for (Member m : members){
-//                System.out.println("m.getUsername() = " + m.getUsername());
-//            }
-//            System.out.println(" ===============");
+            em.flush();
+            em.clear();
+
+            Movie findMovie = em.find(Movie.class,movie.getId());
+            System.out.println("findMovie = " + findMovie);
 
             tx.commit();
         } catch (Exception e) {
