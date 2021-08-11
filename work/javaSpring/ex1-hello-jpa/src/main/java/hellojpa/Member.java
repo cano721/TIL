@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 
-public class Member {
+public class Member extends BaseEntity{
 
     @Id
     @GeneratedValue
@@ -38,6 +38,8 @@ public class Member {
 
     @OneToMany(mappedBy = "product")
     private List<MemberProduct> memberProducts = new ArrayList<>();
+
+
 
     public Long getId() {
         return id;
