@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 
-public class Member extends BaseEntity{
+public class Member{
 
     @Id
     @GeneratedValue
@@ -19,17 +19,26 @@ public class Member extends BaseEntity{
     @Column(name = "USERNAME")
     private String username;
 
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn
-    private Team team;
+    //기간 Period
+    @Embedded
+    private Period period;
 
 
-    @OneToMany(mappedBy = "product")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+    //주소
+    @Embedded
+    private Address address;
 
-
+    //같은 값 타입 사용시엔 컬럼명 중복되므로 재정의 필요
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city",
+                    column = @Column(name = "WORK_CITY")),
+            @AttributeOverride(name = "street",
+                    column = @Column(name = "WORK_STREET")),
+            @AttributeOverride(name = "zipcode",
+                    column = @Column(name = "WORK_ZIPCODE"))
+    })
+    private Address homeAddress;
 
     public Long getId() {
         return id;
@@ -47,26 +56,19 @@ public class Member extends BaseEntity{
         this.username = username;
     }
 
-    public Team getTeam() {
-        return team;
+    public Period getPeriod() {
+        return period;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
+    public void setPeriod(Period period) {
+        this.period = period;
     }
 
-//    public Team getTeam() {
-//        return team;
-//    }
-//
-//    public void setTeam(Team team) {
-//        this.team = team;
-//    }
+    public Address getAddress() {
+        return address;
+    }
 
-//    public void changeTeam(Team team) {
-//        this.team = team;
-//        team.getMembers().add(this);
-//    }
-
-
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }
