@@ -71,4 +71,12 @@ public class Member{
     public void setAddress(Address address) {
         this.address = address;
     }
+
+    public Address getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
+    }
 }
