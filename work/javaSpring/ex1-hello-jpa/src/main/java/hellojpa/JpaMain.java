@@ -5,6 +5,7 @@ import org.hibernate.Hibernate;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 public class JpaMain {
 
@@ -17,26 +18,36 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            Address address = new Address("city", "street", "10000");
 
             Member member = new Member();
             member.setUsername("member1");
-            member.setAddress(address);
+            member.setHomeAddress(new Address("homeCity","street","10000"));
+
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("족발");
+            member.getFavoriteFoods().add("피자");
+
+//            member.getAddressHistory().add(new Address("old1","street","10000"));
+//            member.getAddressHistory().add(new Address("old2","street","10000"));
+
             em.persist(member);
 
-//            Member member2 = new Member();
-//            member2.setUsername("member2");
-//            member2.setAddress(copyAddress);
-//            em.persist(member2);
+            em.flush();
+            em.clear();
 
-            // 맴버1만 변경하고싶지만 2개다 변경되어버린다!...
-            // 임베디드타입을 여러 엔티티에서 공유하면 위험한점.
-            // setter 자체를 삭제해거나 private설정하여 불변으로 만들어줄것
-            // member.getAddress().setCity("newCity");
+            System.out.println("=====================START==============");
+            Member findMember = em.find(Member.class, member.getId());
 
-            //통으로 변경
-            Address copyAddress = new Address("NewCity", address.getStreet(), address.getZipcode());
-            member.setAddress(copyAddress);
+            //homeCity -> newCity
+            Address a = findMember.getHomeAddress();
+            findMember.setHomeAddress(new Address("newCity",a.getStreet(),a.getZipcode()));
+
+            //치킨 -> 한식
+            findMember.getFavoriteFoods().remove("치킨");
+            findMember.getFavoriteFoods().add("한식");
+
+            findMember.getAddressEntity().add(new AddressEntity("old1","street","10000"));
+            findMember.getAddressEntity().add(new AddressEntity("newCity1","street","10000"));
 
             tx.commit();
         } catch (Exception e) {
