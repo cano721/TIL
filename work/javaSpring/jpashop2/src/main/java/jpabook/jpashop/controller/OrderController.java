@@ -37,9 +37,15 @@ public class OrderController {
     @PostMapping("/order")
     public String order(@RequestParam("memberId") Long memberId,
                         @RequestParam("itemId") Long itemId,
-                        @RequestParam("count") int count){
+                        @RequestParam("count") int count,
+                        @RequestParam("arr") List<String> arr
+    ){
 
         orderService.order(memberId,itemId,count);
+        System.out.println(" =======success ======== ");
+        for(String items : arr){
+            System.out.println("arr = " + items);
+        }
         return "redirect:/orders";
     }
 

@@ -1,6 +1,70 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.js"></script>
+<script>
+var arr = []
+function handleOnChange(e) {
+// 선택된 데이터 가져오기
+const text = e.options[e.selectedIndex].text;
+arr.push(text)
+
+console.log(e.options);
+
+// 데이터 출력
+document.getElementById('itemss').innerText
+= arr.join('\n');
+}
+
+// 버튼 클릭시 ajax 실행
+
+
+$(document).ready(function(){
+
+          $("#save").click(function() {
+              //배열 선언
+              var fruitArray = [];
+
+              $('input[name="fruit"]:checked').each(function(i){//체크된 리스트 저장
+                  fruitArray.push($(this).val());
+              });
+
+              var objParams = {
+                      //"user"      : $("#user").val(), //유저 저장
+                      "arr" : arr        //과일배열 저장
+                  };
+
+              //ajax 호출
+              $.ajax({
+                  url         :   "/order",
+                  dataType    :   "json",
+                  contentType :   "application/x-www-form-urlencoded; charset=UTF-8",
+                  type        :   "post",
+                  data        :   objParams,
+                  success     :   function(retVal){
+
+                      if(retVal.code == "OK") {
+                          alert(retVal.message);
+                      } else {
+                          alert(retVal.message);
+                      }
+
+                  },
+                  error       :   function(request, status, error){
+                      console.log("AJAX_ERROR");
+                  }
+              });
+
+          })
+
+      });
+
+
+</script>
+
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/header :: header" />
+<head th:replace="fragments/header :: header">
+
+
+</head>
 <body>
 <div class="container">
   <div th:replace="fragments/bodyHeader :: bodyHeader"/>
@@ -14,9 +78,10 @@
                 th:text="${member.name}" />
       </select>
     </div>
+    <h1 id="itemss"></h1>
     <div class="form-group">
       <label for="item">상품명</label>
-      <select name="itemId" id="item" class="form-control">
+      <select name="itemId" id="item" class="form-control" onchange="handleOnChange(this)">
         <option value="">상품선택</option>
         <option th:each="item : ${items}"
                 th:value="${item.id}"
@@ -28,7 +93,7 @@
       <input type="number" name="count" class="form-control" id="count"
              placeholder="주문 수량을 입력하세요">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button id = "orders" type="submit" class="btn btn-primary">Submit</button>
   </form>
   <br/>
   <div th:replace="fragments/footer :: footer" />
