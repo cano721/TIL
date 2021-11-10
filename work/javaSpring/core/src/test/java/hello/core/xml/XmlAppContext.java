@@ -5,7 +5,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
-
+/*
 public class XmlAppContext {
 
     @Test
@@ -16,3 +16,4 @@ public class XmlAppContext {
         Assertions.assertThat(memberService).isInstanceOf(MemberService.class);
     }
 }
+*/
