@@ -39,7 +39,7 @@ public class NetworkClient{
 
     @PreDestroy
     public void close() throws Exception {
-        System.out.println("NetworkClient.colse");
+        System.out.println("NetworkClient.close");
         disconnect();
     }
 }
