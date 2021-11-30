@@ -100,5 +100,5 @@
   * 서블릿
     * httpServletRequest, httpServletResponse
   * 서블릿과 JSP로 회원관리 적용
-  * 
+  * MVC패턴 적용
 
