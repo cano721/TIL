@@ -99,4 +99,6 @@
   * 웹서버와 WAS의 차이, 서블릿, 멀티 쓰레드,SSR,CSR 개념
   * 서블릿
     * httpServletRequest, httpServletResponse
+  * 서블릿과 JSP로 회원관리 적용
+  * 
 
