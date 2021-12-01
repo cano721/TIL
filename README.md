@@ -101,4 +101,6 @@
     * httpServletRequest, httpServletResponse
   * 서블릿과 JSP로 회원관리 적용
   * MVC패턴 적용
+  * MVC 프레임워크 만들어보기
+    * 프론트 컨트롤러, 뷰, 모델
 
