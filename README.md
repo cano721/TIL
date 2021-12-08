@@ -112,4 +112,9 @@
     * 응답 - 정적 리소스, 뷰 템플릿
     * HTTP 응답 - HTTP API, 메시지 바디에 직접 입력
     * 메시지 컨버터, 매핑 핸들러 어댑터
+  * 스프링 MVC
+    * Thymeleaf
+    * 상품 등록,목록,수정처리
+    * PRG (Post/Redirect/Get)
+    * RedirectAttributes
 
