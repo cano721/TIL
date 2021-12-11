@@ -121,4 +121,5 @@
 * 2021-12-10~ 스프링 MVC 2편
   * Thymeleaf 사용법
   * 메시지,국제화
+  * Validation
 
