@@ -122,4 +122,6 @@
   * Thymeleaf 사용법
   * 메시지,국제화
   * Validation
+  * Bean Validation
+  * 로그인처리 -쿠키,세션
 
