@@ -41,7 +41,9 @@
 * mqtt 통신 및 video 스트리밍 설정
 * 기초적인 flask 서버
 
+## [javaScript](./work/javaScript)
 
+* 기본 사용법
 
 ## [javaSpring](./work/javaSpring)
 
