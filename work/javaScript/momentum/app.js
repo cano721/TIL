@@ -1,29 +1,30 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
-// event
-function handleTitleClickV1(){
-    const clickedClass = "clicked";
-    if(h1.className === clickedClass){
-        h1.className = "";
-    }else {
-        h1.className = clickedClass;
-    }
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
+function onLoginSubmit(event){
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY,username);
+    paintGreetings(username);
 }
 
-// 기존에 있던 class이름은 지우지 않기
-function handleTitleClickV2(){
-    const clickedClass = "clicked";
-    if(h1.classList.contains(clickedClass)){ //class내에 있는지 확인 boolean타입 반환
-        h1.classList.remove(clickedClass); // 지우기
-    }else {
-        h1.classList.add(clickedClass); // 추가하기
-    }
+function paintGreetings(username){
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
-// toggle 이용
-function handleTitleClickV3(){
-    const clickedClass = "clicked";
-    h1.classList.toggle(clickedClass); // 있다면 지우고, 없으면 추가해줌
-}
+loginForm.addEventListener("submit", onLoginSubmit);
 
-h1.addEventListener("click", handleTitleClickV1);
+const saveUsername = localStorage.getItem(USERNAME_KEY);
+
+if(saveUsername === null){
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit",onLoginSubmit);
+}else {
+    paintGreetings(saveUsername);
+}
