@@ -1,10 +1,10 @@
 /**
  * Java 14 변경사항
  *
- * 1. instanceof 패턴 매칭
+ * 1. instanceof 패턴 매칭 (Preview)
  * 기존과 다르게 형변환 없이 바로 해당 타입 변수에 할당 가능
  *
- * 2. record 도입
+ * 2. record 도입 (Preview)
  * 불변 데이터 객체를 쉽게 만들 수 있도록 도입
  * 해당 클래스는 불변이며, 생성자, getter, equals(), hashCode(), toString() 메소드를 자동 생성
  * 보일러플레이트 코드를 많이 줄일듯 VO객체를 만들 때 유용할 듯
