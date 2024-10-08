@@ -1,3 +1,5 @@
+package java_version_feature;
+
 /**
  * Java 12 - Switch Expressions (Preview -> 13에서 반영)
  * yield 처리

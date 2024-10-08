@@ -1,5 +1,7 @@
 // 정규식 공부
 
+import java_version_feature.Java15;
+
 public class Regex{
     public static void main(String[] args) {
         
@@ -8,5 +10,6 @@ public class Regex{
         String removeStr = str.replaceAll("\\d[a-z]*[A-Z]*", "");
         System.err.println(removeStr);
         System.err.println(str.replaceAll("^0-8", ""));
+
     }
 }
