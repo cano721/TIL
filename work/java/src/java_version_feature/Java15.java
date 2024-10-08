@@ -41,14 +41,14 @@ public class Java15 {
     }
 
     // 불가능
-    public class Pentagon extends Shape {
-        // Pentagon은 다른 클래스가 상속할 수 없음
-    }
-
-    // 불가능
-    public class Hexagon extends Circle {
-        // Hexagon은 다른 클래스가 상속할 수 없음
-    }
+//    public class Pentagon extends Shape {
+//        // Pentagon은 다른 클래스가 상속할 수 없음
+//    }
+//
+//    // 불가능
+//    public class Hexagon extends Circle {
+//        // Hexagon은 다른 클래스가 상속할 수 없음
+//    }
 
     // 가능
     public class Rectangle extends Square {
